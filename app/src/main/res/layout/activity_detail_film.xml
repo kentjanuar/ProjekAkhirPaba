@@ -1,0 +1,112 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Bagian Header (Gambar dan Judul Film) -->
+        <ImageView
+            android:id="@+id/filmPoster"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/error" />
+
+        <TextView
+            android:id="@+id/filmTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="RACUN SANGGA"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="#000000" />
+
+        <!-- Bagian Tanggal -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="16dp">
+
+            <Button
+                android:id="@+id/todayButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="13 Des\nHARI INI"
+                android:gravity="center"
+                android:padding="8dp"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/nextDayButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="14 Des\nSAB"
+                android:gravity="center"
+                android:padding="8dp"
+                android:textSize="12sp"
+                android:layout_marginStart="8dp" />
+
+            <!-- Tambahkan tombol lain sesuai kebutuhan -->
+        </LinearLayout>
+
+        <!-- Bagian Bioskop dan Jadwal -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:id="@+id/bioskopName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="AEON MALL JGC CGV"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:padding="8dp" />
+
+            <TextView
+                android:id="@+id/bioskopAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="655.59 km - AEON Cakung Mall Lt. 3 Ps. Modern Jakarta Garden City"
+                android:textSize="14sp"
+                android:padding="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/timeButton1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12:00"
+                    android:padding="8dp" />
+
+                <Button
+                    android:id="@+id/timeButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="14:00"
+                    android:layout_marginStart="8dp"
+                    android:padding="8dp" />
+
+                <!-- Tambahkan tombol lainnya -->
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Tambahkan lebih banyak bagian bioskop jika diperlukan -->
+
+    </LinearLayout>
+</ScrollView>
