@@ -14,6 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:scaleType="centerCrop"
+            android:background="@color/black"
             android:src="@drawable/error" />
 
         <TextView
@@ -35,78 +36,297 @@
             android:gravity="center"
             android:layout_marginTop="16dp">
 
-            <Button
-                android:id="@+id/todayButton"
-                android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/tglHariIni"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="13 Des\nHARI INI"
-                android:gravity="center"
-                android:padding="8dp"
-                android:textSize="12sp" />
+                android:layout_weight="1"
+                android:text="hari ini"
+                android:background="@drawable/rounded_border"
+                android:layout_margin="8dp"
+                android:padding="8dp" />
 
-            <Button
-                android:id="@+id/nextDayButton"
-                android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/tglBesok"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="14 Des\nSAB"
-                android:gravity="center"
-                android:padding="8dp"
-                android:textSize="12sp"
-                android:layout_marginStart="8dp" />
+                android:layout_weight="1"
+                android:text="besok"
+                android:background="@drawable/rounded_border"
+                android:layout_margin="8dp"
+                android:padding="8dp" />
 
-            <!-- Tambahkan tombol lain sesuai kebutuhan -->
+            <TextView
+                android:id="@+id/tglLusa"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="besok lusa"
+                android:background="@drawable/rounded_border"
+                android:layout_margin="8dp"
+                android:padding="8dp" />
+
+            <TextView
+                android:id="@+id/tglLainnya"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="tgl lainnya"
+                android:background="@drawable/rounded_border"
+                android:layout_margin="8dp"
+                android:padding="8dp" />
         </LinearLayout>
 
-        <!-- Bagian Bioskop dan Jadwal -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_marginTop="16dp">
 
-            <TextView
-                android:id="@+id/bioskopName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="AEON MALL JGC CGV"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:padding="8dp" />
-
-            <TextView
-                android:id="@+id/bioskopAddress"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="655.59 km - AEON Cakung Mall Lt. 3 Ps. Modern Jakarta Garden City"
-                android:textSize="14sp"
-                android:padding="8dp" />
-
+            <!-- Bioskop 1 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center">
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
 
-                <Button
-                    android:id="@+id/timeButton1"
-                    android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/bioskopName1"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="12:00"
+                    android:text="AEON MALL JGC CGV"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
                     android:padding="8dp" />
 
-                <Button
-                    android:id="@+id/timeButton2"
-                    android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/bioskopAddress1"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="14:00"
-                    android:layout_marginStart="8dp"
+                    android:text="655.59 km - AEON Cakung Mall Lt. 3 Ps. Modern Jakarta Garden City"
+                    android:textSize="14sp"
                     android:padding="8dp" />
 
-                <!-- Tambahkan tombol lainnya -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/tempat1_waktu1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12:00"
+                        android:background="@drawable/rounded_border"
+                        android:layout_margin="8dp"
+                        android:padding="8dp" />
+
+                    <TextView
+                        android:id="@+id/tempat1_waktu2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="14:15"
+                        android:background="@drawable/rounded_border"
+                        android:layout_margin="8dp"
+                        android:padding="8dp" />
+
+                    <TextView
+                        android:id="@+id/tempat1_waktu3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="16:30"
+                        android:background="@drawable/rounded_border"
+                        android:layout_margin="8dp"
+                        android:padding="8dp" />
+
+                    <TextView
+                        android:id="@+id/tempat1_waktu4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="18:45"
+                        android:background="@drawable/rounded_border"
+                        android:layout_margin="8dp"
+                        android:padding="8dp" />
+
+                    <TextView
+                        android:id="@+id/tempat1_waktu5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="21:00"
+                        android:background="@drawable/rounded_border"
+                        android:layout_margin="8dp"
+                        android:padding="8dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Bioskop 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+
+                <TextView
+                    android:id="@+id/bioskopName2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cinemaxx Lippo Plaza"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:padding="8dp" />
+
+                <TextView
+                    android:id="@+id/bioskopAddress2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="12.31 km - Lippo Plaza Kramat Jati Lt. 2, Jakarta Timur"
+                    android:textSize="14sp"
+                    android:padding="8dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/tempat2_waktu1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12:00"
+                        android:background="@drawable/rounded_border"
+                        android:layout_margin="8dp"
+                        android:padding="8dp" />
+
+                    <TextView
+                        android:id="@+id/tempat2_waktu2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="14:15"
+                        android:background="@drawable/rounded_border"
+                        android:layout_margin="8dp"
+                        android:padding="8dp" />
+
+                    <TextView
+                        android:id="@+id/tempat2_waktu3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="16:30"
+                        android:background="@drawable/rounded_border"
+                        android:layout_margin="8dp"
+                        android:padding="8dp" />
+
+                    <TextView
+                        android:id="@+id/tempat2_waktu4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="18:45"
+                        android:background="@drawable/rounded_border"
+                        android:layout_margin="8dp"
+                        android:padding="8dp" />
+
+                    <TextView
+                        android:id="@+id/tempat2_waktu5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="21:00"
+                        android:background="@drawable/rounded_border"
+                        android:layout_margin="8dp"
+                        android:padding="8dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Bioskop 3 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+
+                <TextView
+                    android:id="@+id/bioskopName3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="XXI Plaza Senayan"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:padding="8dp" />
+
+                <TextView
+                    android:id="@+id/bioskopAddress3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="9.12 km - Plaza Senayan Lt. 5, Jakarta Selatan"
+                    android:textSize="14sp"
+                    android:padding="8dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/tempat3_waktu1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12:00"
+                        android:background="@drawable/rounded_border"
+                        android:layout_margin="8dp"
+                        android:padding="8dp" />
+
+                    <TextView
+                        android:id="@+id/tempat3_waktu2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="14:15"
+                        android:background="@drawable/rounded_border"
+                        android:layout_margin="8dp"
+                        android:padding="8dp" />
+
+                    <TextView
+                        android:id="@+id/tempat3_waktu3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="16:30"
+                        android:background="@drawable/rounded_border"
+                        android:layout_margin="8dp"
+                        android:padding="8dp" />
+
+                    <TextView
+                        android:id="@+id/tempat3_waktu4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="18:45"
+                        android:background="@drawable/rounded_border"
+                        android:layout_margin="8dp"
+                        android:padding="8dp" />
+
+                    <TextView
+                        android:id="@+id/tempat3_waktu5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="21:00"
+                        android:background="@drawable/rounded_border"
+                        android:layout_margin="8dp"
+                        android:padding="8dp" />
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
 
-        <!-- Tambahkan lebih banyak bagian bioskop jika diperlukan -->
+
+
+        <Button
+            android:id="@+id/kePilihKursi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pilih kursi"
+
+            android:layout_margin="10dp"
+            />
+
+
 
     </LinearLayout>
 </ScrollView>
