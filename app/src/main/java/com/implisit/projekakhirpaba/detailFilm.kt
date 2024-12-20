@@ -41,6 +41,13 @@ class detailFilm : AppCompatActivity() {
 
         val judulFilm = findViewById<TextView>(R.id.filmTitle)
         val posterFilm = findViewById<ImageView>(R.id.filmPoster)
+        val deskripsiFilm = findViewById<TextView>(R.id.filmDeskripsi)
+        val ratingFilm = findViewById<TextView>(R.id.filmRating)
+        val tahunFilm = findViewById<TextView>(R.id.filmTahun)
+
+        deskripsiFilm.text = deskripsi
+        ratingFilm.text = rating
+        tahunFilm.text = tahun
 
         judulFilm.text = judul
         posterFilm.setImageResource(resources.getIdentifier(gambar, "drawable", packageName))
@@ -54,19 +61,19 @@ class detailFilm : AppCompatActivity() {
         val times = mapOf(
             findViewById<TextView>(R.id.tempat1_waktu1) to Pair("AEON MALL JGC CGV", "655.59 km - AEON Cakung Mall Lt. 3 Ps. Modern Jakarta Garden City"),
             findViewById<TextView>(R.id.tempat1_waktu2) to Pair("AEON MALL JGC CGV", "655.59 km - AEON Cakung Mall Lt. 3 Ps. Modern Jakarta Garden City"),
-            findViewById<TextView>(R.id.tempat1_waktu3) to Pair("AEON MALL JGC CGV", "655.59 km - AEON Cakung Mall Lt. 3 Ps. Modern Jakarta Garden City"),
-            findViewById<TextView>(R.id.tempat1_waktu4) to Pair("AEON MALL JGC CGV", "655.59 km - AEON Cakung Mall Lt. 3 Ps. Modern Jakarta Garden City"),
-            findViewById<TextView>(R.id.tempat1_waktu5) to Pair("AEON MALL JGC CGV", "655.59 km - AEON Cakung Mall Lt. 3 Ps. Modern Jakarta Garden City"),
-            findViewById<TextView>(R.id.tempat2_waktu1) to Pair("Cinemaxx Lippo Plaza", "12.31 km - Lippo Plaza Kramat Jati Lt. 2, Jakarta Timur"),
-            findViewById<TextView>(R.id.tempat2_waktu2) to Pair("Cinemaxx Lippo Plaza", "12.31 km - Lippo Plaza Kramat Jati Lt. 2, Jakarta Timur"),
-            findViewById<TextView>(R.id.tempat2_waktu3) to Pair("Cinemaxx Lippo Plaza", "12.31 km - Lippo Plaza Kramat Jati Lt. 2, Jakarta Timur"),
-            findViewById<TextView>(R.id.tempat2_waktu4) to Pair("Cinemaxx Lippo Plaza", "12.31 km - Lippo Plaza Kramat Jati Lt. 2, Jakarta Timur"),
-            findViewById<TextView>(R.id.tempat2_waktu5) to Pair("Cinemaxx Lippo Plaza", "12.31 km - Lippo Plaza Kramat Jati Lt. 2, Jakarta Timur"),
-            findViewById<TextView>(R.id.tempat3_waktu1) to Pair("XXI Plaza Senayan", "9.12 km - Plaza Senayan Lt. 5, Jakarta Selatan"),
-            findViewById<TextView>(R.id.tempat3_waktu2) to Pair("XXI Plaza Senayan", "9.12 km - Plaza Senayan Lt. 5, Jakarta Selatan"),
-            findViewById<TextView>(R.id.tempat3_waktu3) to Pair("XXI Plaza Senayan", "9.12 km - Plaza Senayan Lt. 5, Jakarta Selatan"),
-            findViewById<TextView>(R.id.tempat3_waktu4) to Pair("XXI Plaza Senayan", "9.12 km - Plaza Senayan Lt. 5, Jakarta Selatan"),
-            findViewById<TextView>(R.id.tempat3_waktu5) to Pair("XXI Plaza Senayan", "9.12 km - Plaza Senayan Lt. 5, Jakarta Selatan")
+            findViewById<TextView>(R.id.tempat1_waktu3) to Pair("AEON MALL JGC CGV", "AEON Cakung Mall Lt. 3 Ps. Modern Jakarta Garden City"),
+            findViewById<TextView>(R.id.tempat1_waktu4) to Pair("AEON MALL JGC CGV", "AEON Cakung Mall Lt. 3 Ps. Modern Jakarta Garden City"),
+            findViewById<TextView>(R.id.tempat1_waktu5) to Pair("AEON MALL JGC CGV", "AEON Cakung Mall Lt. 3 Ps. Modern Jakarta Garden City"),
+            findViewById<TextView>(R.id.tempat2_waktu1) to Pair("Cinemaxx Lippo Plaza", "Lippo Plaza Kramat Jati Lt. 2, Jakarta Timur"),
+            findViewById<TextView>(R.id.tempat2_waktu2) to Pair("Cinemaxx Lippo Plaza", "Lippo Plaza Kramat Jati Lt. 2, Jakarta Timur"),
+            findViewById<TextView>(R.id.tempat2_waktu3) to Pair("Cinemaxx Lippo Plaza", "Lippo Plaza Kramat Jati Lt. 2, Jakarta Timur"),
+            findViewById<TextView>(R.id.tempat2_waktu4) to Pair("Cinemaxx Lippo Plaza", " Lippo Plaza Kramat Jati Lt. 2, Jakarta Timur"),
+            findViewById<TextView>(R.id.tempat2_waktu5) to Pair("Cinemaxx Lippo Plaza", "Lippo Plaza Kramat Jati Lt. 2, Jakarta Timur"),
+            findViewById<TextView>(R.id.tempat3_waktu1) to Pair("XXI Plaza Senayan", "Plaza Senayan Lt. 5, Jakarta Selatan"),
+            findViewById<TextView>(R.id.tempat3_waktu2) to Pair("XXI Plaza Senayan", "Plaza Senayan Lt. 5, Jakarta Selatan"),
+            findViewById<TextView>(R.id.tempat3_waktu3) to Pair("XXI Plaza Senayan", "Plaza Senayan Lt. 5, Jakarta Selatan"),
+            findViewById<TextView>(R.id.tempat3_waktu4) to Pair("XXI Plaza Senayan", "Plaza Senayan Lt. 5, Jakarta Selatan"),
+            findViewById<TextView>(R.id.tempat3_waktu5) to Pair("XXI Plaza Senayan", "Plaza Senayan Lt. 5, Jakarta Selatan")
         )
 
         dates.forEach { date ->
