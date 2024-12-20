@@ -17,7 +17,7 @@ class adapterFilm (private val listFilm: MutableList<film>):RecyclerView.Adapter
         var _judul = itemView.findViewById<TextView>(R.id.judulFilm)
         var _rating = itemView.findViewById<TextView>(R.id.ratingFilm)
         var _gambar = itemView.findViewById<ImageView>(R.id.gambarFilm)
-        var _background = itemView.findViewById<ImageView>(R.id.background)
+        var _background = itemView.findViewById<androidx.cardview.widget.CardView>(R.id.background)
     }
     override fun onCreateViewHolder(
         parent: ViewGroup,

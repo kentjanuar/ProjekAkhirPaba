@@ -61,7 +61,7 @@ class register : AppCompatActivity() {
         db.collection("Users").document(phone).set(userData)
             .addOnSuccessListener {
                 // Membuat subkoleksi "Tickets" untuk pengguna
-                Toast.makeText(this, "Registrasi dan tiket berhasil ditambahkan!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Registrasi berhasil ditambahkan!", Toast.LENGTH_SHORT).show()
                 finish() // Kembali ke halaman login
 
             }
