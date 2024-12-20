@@ -1,6 +1,7 @@
 package com.implisit.projekakhirpaba
 
 import android.content.Intent
+import android.icu.util.Calendar
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
@@ -9,6 +10,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import java.text.SimpleDateFormat
+import java.util.Locale
 
 class detailFilm : AppCompatActivity() {
     private lateinit var selectedDate: TextView
@@ -25,6 +28,8 @@ class detailFilm : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        dateGet()
 
         val judul = intent.getStringExtra("judul")
         val rating = intent.getStringExtra("rating")
@@ -104,7 +109,24 @@ class detailFilm : AppCompatActivity() {
         }
     }
 
-    private fun dateGet(){
+    private fun dateGet() {
+        val calendar = Calendar.getInstance()
+        val dateFormat = SimpleDateFormat("dd MMM yyyy", Locale.getDefault())
 
+        val today = dateFormat.format(calendar.time)
+        calendar.add(Calendar.DAY_OF_YEAR, 1)
+        val tomorrow = dateFormat.format(calendar.time)
+        calendar.add(Calendar.DAY_OF_YEAR, 1)
+        val dayAfterTomorrow = dateFormat.format(calendar.time)
+
+        val dates = listOf(
+            findViewById<TextView>(R.id.tglHariIni),
+            findViewById<TextView>(R.id.tglBesok),
+            findViewById<TextView>(R.id.tglLusa)
+        )
+
+        dates[0].text = today
+        dates[1].text = tomorrow
+        dates[2].text = dayAfterTomorrow
     }
 }
