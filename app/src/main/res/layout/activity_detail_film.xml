@@ -159,7 +159,7 @@
                     android:id="@+id/bioskopAddress1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="655.59 km - AEON Cakung Mall Lt. 3 Ps. Modern Jakarta Garden City"
+                    android:text="AEON Cakung Mall Lt. 3 Ps. Modern Jakarta Garden City"
                     android:textSize="14sp"
                     android:padding="8dp" />
 
@@ -236,7 +236,7 @@
                     android:id="@+id/bioskopAddress2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="12.31 km - Lippo Plaza Kramat Jati Lt. 2, Jakarta Timur"
+                    android:text="Lippo Plaza Kramat Jati Lt. 2, Jakarta Timur"
                     android:textSize="14sp"
                     android:padding="8dp" />
 
@@ -313,7 +313,7 @@
                     android:id="@+id/bioskopAddress3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="9.12 km - Plaza Senayan Lt. 5, Jakarta Selatan"
+                    android:text="Plaza Senayan Lt. 5, Jakarta Selatan"
                     android:textSize="14sp"
                     android:padding="8dp" />
 

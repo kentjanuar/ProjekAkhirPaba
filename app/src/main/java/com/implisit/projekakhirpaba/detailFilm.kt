@@ -59,8 +59,8 @@ class detailFilm : AppCompatActivity() {
         )
 
         val times = mapOf(
-            findViewById<TextView>(R.id.tempat1_waktu1) to Pair("AEON MALL JGC CGV", "655.59 km - AEON Cakung Mall Lt. 3 Ps. Modern Jakarta Garden City"),
-            findViewById<TextView>(R.id.tempat1_waktu2) to Pair("AEON MALL JGC CGV", "655.59 km - AEON Cakung Mall Lt. 3 Ps. Modern Jakarta Garden City"),
+            findViewById<TextView>(R.id.tempat1_waktu1) to Pair("AEON MALL JGC CGV", "AEON Cakung Mall Lt. 3 Ps. Modern Jakarta Garden City"),
+            findViewById<TextView>(R.id.tempat1_waktu2) to Pair("AEON MALL JGC CGV", "AEON Cakung Mall Lt. 3 Ps. Modern Jakarta Garden City"),
             findViewById<TextView>(R.id.tempat1_waktu3) to Pair("AEON MALL JGC CGV", "AEON Cakung Mall Lt. 3 Ps. Modern Jakarta Garden City"),
             findViewById<TextView>(R.id.tempat1_waktu4) to Pair("AEON MALL JGC CGV", "AEON Cakung Mall Lt. 3 Ps. Modern Jakarta Garden City"),
             findViewById<TextView>(R.id.tempat1_waktu5) to Pair("AEON MALL JGC CGV", "AEON Cakung Mall Lt. 3 Ps. Modern Jakarta Garden City"),
