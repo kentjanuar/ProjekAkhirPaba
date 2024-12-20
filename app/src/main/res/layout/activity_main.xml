@@ -11,7 +11,10 @@
         android:id="@+id/navbar"
         android:layout_width="match_parent"
         android:layout_height="53dp"
-        android:src="@drawable/navbar" />
+        android:src="@drawable/navbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
 
     <ImageView
         android:id="@+id/logout"
