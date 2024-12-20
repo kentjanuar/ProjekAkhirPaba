@@ -67,15 +67,7 @@
                 android:layout_margin="8dp"
                 android:padding="8dp" />
 
-            <TextView
-                android:id="@+id/tglLainnya"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="tgl lainnya"
-                android:background="@drawable/rounded_border"
-                android:layout_margin="8dp"
-                android:padding="8dp" />
+
         </LinearLayout>
 
         <LinearLayout

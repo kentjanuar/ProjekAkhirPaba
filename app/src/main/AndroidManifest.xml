@@ -13,8 +13,12 @@
         android:theme="@style/Theme.ProjekAkhirPaba"
         tools:targetApi="31">
         <activity
-            android:name=".coba"
+            android:name=".login"
             android:exported="false" />
+        <activity
+            android:name=".register"
+            android:exported="false" />
+
         <activity
             android:name=".pilihKursi"
             android:exported="false" />

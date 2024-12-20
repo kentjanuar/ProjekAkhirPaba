@@ -1,6 +1,8 @@
 package com.implisit.projekakhirpaba
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -41,6 +43,8 @@ class adapterFilm (private val listFilm: MutableList<film>):RecyclerView.Adapter
         }
 
         holder._background.setOnClickListener{
+            val sharedPreferences: SharedPreferences = holder.itemView.context.getSharedPreferences("UserSession", Context.MODE_PRIVATE)
+            val userPhone = sharedPreferences.getString("userPhone", "")
             val intent = Intent(holder.itemView.context, detailFilm::class.java)
             intent.putExtra("judul", film.judul)
             intent.putExtra("rating", film.rating)
@@ -48,6 +52,8 @@ class adapterFilm (private val listFilm: MutableList<film>):RecyclerView.Adapter
             intent.putExtra("deskripsi", film.deskripsi)
             intent.putExtra("tahun", film.tahun)
             intent.putExtra("genre", film.genre)
+            intent.putExtra("userPhone", userPhone)
+
             holder.itemView.context.startActivity(intent)
         }
     }
@@ -55,4 +61,6 @@ class adapterFilm (private val listFilm: MutableList<film>):RecyclerView.Adapter
     override fun getItemCount(): Int {
         return listFilm.size
     }
+
+
 }

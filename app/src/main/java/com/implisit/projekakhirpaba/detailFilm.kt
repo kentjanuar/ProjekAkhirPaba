@@ -32,6 +32,7 @@ class detailFilm : AppCompatActivity() {
         val deskripsi = intent.getStringExtra("deskripsi")
         val tahun = intent.getStringExtra("tahun")
         val genre = intent.getStringExtra("genre")
+        val no_telpon = intent.getStringExtra("userPhone")
 
         val judulFilm = findViewById<TextView>(R.id.filmTitle)
         val posterFilm = findViewById<ImageView>(R.id.filmPoster)
@@ -43,7 +44,6 @@ class detailFilm : AppCompatActivity() {
             findViewById<TextView>(R.id.tglHariIni),
             findViewById<TextView>(R.id.tglBesok),
             findViewById<TextView>(R.id.tglLusa),
-            findViewById<TextView>(R.id.tglLainnya)
         )
 
         val times = mapOf(
@@ -99,7 +99,12 @@ class detailFilm : AppCompatActivity() {
             intent.putExtra("selectedTime", selectedTime.text.toString())
             intent.putExtra("theaterName", selectedTheaterName)
             intent.putExtra("theaterAddress", selectedTheaterAddress)
+            intent.putExtra("userPhone", no_telpon)
             startActivity(intent)
         }
+    }
+
+    private fun dateGet(){
+
     }
 }
