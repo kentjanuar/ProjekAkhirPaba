@@ -61,22 +61,9 @@ class register : AppCompatActivity() {
         db.collection("Users").document(phone).set(userData)
             .addOnSuccessListener {
                 // Membuat subkoleksi "Tickets" untuk pengguna
-                val ticketData = hashMapOf(
-                    "movieTitle" to "Contoh Film",
-                    "seatNumber" to "A1",
-                    "purchaseDate" to "2024-12-20" // Contoh data tiket
-                )
+                Toast.makeText(this, "Registrasi dan tiket berhasil ditambahkan!", Toast.LENGTH_SHORT).show()
+                finish() // Kembali ke halaman login
 
-                db.collection("Users").document(phone)
-                    .collection("Tickets")
-                    .add(ticketData)
-                    .addOnSuccessListener {
-                        Toast.makeText(this, "Registrasi dan tiket berhasil ditambahkan!", Toast.LENGTH_SHORT).show()
-                        finish() // Kembali ke halaman login
-                    }
-                    .addOnFailureListener { e ->
-                        Toast.makeText(this, "Gagal menambahkan tiket: ${e.message}", Toast.LENGTH_SHORT).show()
-                    }
             }
             .addOnFailureListener { e ->
                 Toast.makeText(this, "Registrasi gagal: ${e.message}", Toast.LENGTH_SHORT).show()

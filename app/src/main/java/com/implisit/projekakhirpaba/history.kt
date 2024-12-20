@@ -73,12 +73,15 @@ class history : Fragment() {
             .addOnSuccessListener { result ->
                 arTiket.clear()
                 for (document in result) {
+                    val seatNumbers = document.get("seatNumber") as? List<String> ?: emptyList()
+                    val seatNumbersString = seatNumbers.joinToString(", ")
+
                     val ticket = tiket(
                         judul = document.getString("movieTitle") ?: "",
                         tanggal = document.getString("tanggal_Tayang") ?: "",
                         jam = document.getString("selectedTime") ?: "",
                         tempat = document.getString("theaterName") ?: "",
-                        seat = document.getString("seatNumber") ?: "",
+                        seat = seatNumbersString,
                         location = document.getString("theaterAddress") ?: "",
                         genre = document.getString("genre") ?: ""
                     )
