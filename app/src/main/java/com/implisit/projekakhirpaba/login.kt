@@ -27,14 +27,12 @@ class login : AppCompatActivity() {
             insets
         }
 
-        // Inisialisasi SharedPreferences
         sharedPreferences = getSharedPreferences("UserSession", MODE_PRIVATE)
         val etPhone = findViewById<TextInputEditText>(R.id.etPhone)
         val etPassword = findViewById<TextInputEditText>(R.id.etPassword)
         val btnLogin = findViewById<AppCompatButton>(R.id.btnLogin)
         val btnCreateAkun = findViewById<TextView>(R.id.btnkeRegister)
 
-        // Tombol Login
         btnLogin.setOnClickListener {
             val phone = etPhone.text.toString()
             val password = etPassword.text.toString()

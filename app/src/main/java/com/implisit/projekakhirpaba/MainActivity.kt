@@ -20,7 +20,6 @@ class MainActivity : AppCompatActivity() {
 
         sharedPreferences = getSharedPreferences("UserSession", MODE_PRIVATE)
 
-        // Cek status login
         if (!isLoggedIn()) {
             navigateToLogin()
             return
@@ -77,6 +76,6 @@ class MainActivity : AppCompatActivity() {
     private fun navigateToLogin() {
         val intent = Intent(this, login::class.java)
         startActivity(intent)
-        finish() // Tutup MainActivity agar tidak bisa kembali tanpa login
+        finish()
     }
 }

@@ -25,14 +25,13 @@ class register : AppCompatActivity() {
             insets
         }
 
-        // Inisialisasi komponen dari layout
+
         val etName = findViewById<TextInputEditText>(R.id.etName)
         val etPhone = findViewById<TextInputEditText>(R.id.etPhone)
         val etPassword = findViewById<TextInputEditText>(R.id.etPassword)
         val btnRegister = findViewById<AppCompatButton>(R.id.btnRegister)
         val btnkeLogin = findViewById<TextView>(R.id.btnkeLogin)
 
-        // Tombol register
         btnRegister.setOnClickListener {
             val name = etName.text.toString()
             val phone = etPhone.text.toString()
@@ -54,15 +53,13 @@ class register : AppCompatActivity() {
         val userData = hashMapOf(
             "name" to name,
             "phone" to phone,
-            "password" to password // Simpan password plaintext hanya untuk testing
+            "password" to password
         )
 
-        // Simpan data pengguna ke Firestore
         db.collection("Users").document(phone).set(userData)
             .addOnSuccessListener {
-                // Membuat subkoleksi "Tickets" untuk pengguna
                 Toast.makeText(this, "Registrasi berhasil ditambahkan!", Toast.LENGTH_SHORT).show()
-                finish() // Kembali ke halaman login
+                finish()
 
             }
             .addOnFailureListener { e ->

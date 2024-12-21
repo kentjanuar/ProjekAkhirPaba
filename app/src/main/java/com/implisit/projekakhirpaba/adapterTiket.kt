@@ -47,7 +47,7 @@ class adapterTiket(private val ticketList: List<tiket>) : RecyclerView.Adapter<a
 
 
     private fun generateQRCode(ticket: tiket): Bitmap {
-        val size = 512 // Size of the QR code
+        val size = 512
         val qrCodeWriter = QRCodeWriter()
         val text = formatTicketDetails(ticket)
         return try {

@@ -31,7 +31,6 @@ class pilihKursi : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pilih_kursi)
 
-        // Retrieve intent extras
         judul = intent.getStringExtra("judul") ?: ""
         rating = intent.getStringExtra("rating") ?: ""
         gambar = intent.getStringExtra("gambar") ?: ""
@@ -77,12 +76,10 @@ class pilihKursi : AppCompatActivity() {
             findViewById<ImageView>(R.id.F6).apply { tag = "F6" }
 
         )
-        // Periksa status kursi sebelum menampilkan
         checkSeatsAvailability(seats)
 
         seats.forEach { seat ->
             seat.setOnClickListener {
-                // Cek apakah kursi sudah dibooking oleh pengguna lain
                 db.collection("Users").document(no_telpon)
                     .collection("Tickets")
                     .whereEqualTo("tanggal_Tayang", selectedDate)
@@ -91,18 +88,14 @@ class pilihKursi : AppCompatActivity() {
                     .get()
                     .addOnSuccessListener { snapshot ->
                         if (snapshot.isEmpty) {
-                            // Jika kursi belum dibooking, tambahkan ke dalam list selectedSeats
                             if (selectedSeats.contains(seat.tag)) {
-                                // Jika kursi sudah dipilih sebelumnya, batalkan pemilihan
                                 selectedSeats.remove(seat.tag)
-                                seat.setImageResource(R.drawable.chair)  // Kembalikan gambar kursi
+                                seat.setImageResource(R.drawable.chair)
                             } else {
-                                // Jika kursi belum dipilih, tambahkan kursi ke dalam list
                                 selectedSeats.add(seat.tag as String)
-                                seat.setImageResource(R.drawable.chair_picked)  // Ganti gambar kursi yang dipilih
+                                seat.setImageResource(R.drawable.chair_picked)
                             }
                         } else {
-                            // Kursi sudah dibooking, tampilkan pesan
                             Toast.makeText(this, "Kursi ini sudah dipesan!", Toast.LENGTH_SHORT).show()
                         }
                     }
@@ -149,13 +142,10 @@ class pilihKursi : AppCompatActivity() {
     }
 
     private fun checkSeatsAvailability(seats: List<ImageView>) {
-        // Periksa apakah kursi sudah dipesan oleh pengguna lain pada tanggal dan waktu tertentu
-        db.collection("Users")  // Koleksi Users
-            .get()  // Ambil semua dokumen pengguna
+        db.collection("Users")
+            .get()
             .addOnSuccessListener { userSnapshot ->
-                // Loop melalui semua dokumen pengguna
                 for (userDoc in userSnapshot.documents) {
-                    // Ambil koleksi Tickets untuk setiap pengguna
                     userDoc.reference.collection("Tickets")
                         .whereEqualTo("tanggal_Tayang", selectedDate)
                         .whereEqualTo("selectedTime", selectedTime)
@@ -164,15 +154,14 @@ class pilihKursi : AppCompatActivity() {
                         .get()
                         .addOnSuccessListener { snapshot ->
                             for (document in snapshot.documents) {
-                                val bookedSeats = document.get("seatNumber") as? List<String> // Ambil sebagai list of strings
+                                val bookedSeats = document.get("seatNumber") as? List<String>
                                 if (bookedSeats != null) {
-                                    // Cek apakah kursi yang dipilih ada di dalam list bookedSeats
+
                                     bookedSeats.forEach { bookedSeat ->
-                                        // Tandai kursi yang sudah dipesan dan sembunyikan kursi tersebut
                                         seats.find { it.tag == bookedSeat }?.apply {
-                                            setImageResource(R.drawable.chair_taken) // Ganti gambar kursi yang sudah dibooking
-                                            isClickable = false // Nonaktifkan klik pada kursi yang sudah dibooking
-                                            alpha = 0.5f // Mengurangi opacity untuk memberi indikasi bahwa kursi sudah diambil
+                                            setImageResource(R.drawable.chair_taken)
+                                            isClickable = false
+                                            alpha = 0.5f
                                         }
                                     }
                                 }
