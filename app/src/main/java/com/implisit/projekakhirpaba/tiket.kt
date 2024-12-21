@@ -7,6 +7,8 @@ data class tiket(
     val jam: String,
     val tempat: String,
     val seat: String,
-    val location: String
+    val location: String,
+    var statusDone: Boolean
+
 
 )

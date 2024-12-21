@@ -86,7 +86,8 @@ class history : Fragment() {
                         tempat = document.getString("theaterName") ?: "",
                         seat = seatNumbersString,
                         location = document.getString("theaterAddress") ?: "",
-                        genre = document.getString("genre") ?: ""
+                        genre = document.getString("genre") ?: "",
+                        statusDone = false
                     )
                     arTiket.add(ticket)
                 }

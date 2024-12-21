@@ -22,6 +22,7 @@ class pilihKursi : AppCompatActivity() {
     private lateinit var selectedTime: String
     private lateinit var theaterName: String
     private lateinit var theaterAddress: String
+    private  var done = false
     private  val selectedSeats = mutableListOf<String>()
     private lateinit var no_telpon: String
     private val db = FirebaseFirestore.getInstance()
@@ -120,13 +121,15 @@ class pilihKursi : AppCompatActivity() {
                 "selectedTime" to selectedTime,
                 "theaterName" to theaterName,
                 "theaterAddress" to theaterAddress,
-                "no_telpon" to no_telpon
+                "no_telpon" to no_telpon,
+                "status_Done" to done
             )
 
             val db = FirebaseFirestore.getInstance()
             db.collection("Users").document(no_telpon)
                 .collection("Tickets")
-                .add(ticketData)
+                .document(judul)
+                .set(ticketData)
                 .addOnSuccessListener {
                     Toast.makeText(this, "Tiket berhasil dipesan!", Toast.LENGTH_SHORT).show()
                 }

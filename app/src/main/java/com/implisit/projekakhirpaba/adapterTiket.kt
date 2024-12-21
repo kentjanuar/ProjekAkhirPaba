@@ -1,11 +1,17 @@
+import android.content.Context
+import android.content.SharedPreferences
 import android.graphics.Bitmap
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity.MODE_PRIVATE
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.Firebase
+import com.google.firebase.firestore.firestore
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.WriterException
 import com.google.zxing.qrcode.QRCodeWriter
@@ -23,6 +29,7 @@ class adapterTiket(private val ticketList: List<tiket>) : RecyclerView.Adapter<a
         val location: TextView = itemView.findViewById(R.id.location)
         val genre: TextView = itemView.findViewById(R.id.genre)
         val qrCode: ImageView = itemView.findViewById(R.id.qrCode)
+        val btnStatus : Button = itemView.findViewById(R.id.btnStatus)
 
     }
 
@@ -33,6 +40,10 @@ class adapterTiket(private val ticketList: List<tiket>) : RecyclerView.Adapter<a
 
     override fun onBindViewHolder(holder: TicketViewHolder, position: Int) {
         val tiketFilm = ticketList[position]
+        val sharedPreferences: SharedPreferences = holder.itemView.context.getSharedPreferences("UserSession", Context.MODE_PRIVATE)
+        val userPhone = sharedPreferences.getString("userPhone", "")
+        val db = Firebase.firestore
+
         holder.judul.text = tiketFilm.judul
         holder.tanggal.text = tiketFilm.tanggal
         holder.jam.text = tiketFilm.jam
@@ -40,6 +51,13 @@ class adapterTiket(private val ticketList: List<tiket>) : RecyclerView.Adapter<a
         holder.seat.text = tiketFilm.seat
         holder.location.text = tiketFilm.location
         holder.genre.text = tiketFilm.genre
+        holder.btnStatus.setOnClickListener {
+            db.collection("Users").document(userPhone ?:"123")
+                .collection("Tickets").document(tiketFilm.judul)
+                .set(statusDone = true)
+        }
+
+
         val qrCodeBitmap = generateQRCode(tiketFilm)
         holder.qrCode.setImageBitmap(qrCodeBitmap)
 
@@ -78,3 +96,5 @@ class adapterTiket(private val ticketList: List<tiket>) : RecyclerView.Adapter<a
 
     override fun getItemCount() = ticketList.size
 }
+
+

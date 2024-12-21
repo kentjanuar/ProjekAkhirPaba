@@ -6,5 +6,5 @@ data class film(
     var tahun: String ,
     var rating: String ,
     var deskripsi: String ,
-    var gambar: String
+    var gambar: String,
 )

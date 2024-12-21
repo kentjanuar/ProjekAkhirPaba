@@ -87,10 +87,31 @@
         android:id="@+id/history"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
         android:src="@drawable/history"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/home"
         app:layout_constraintTop_toTopOf="@+id/home" />
+
+    <TextView
+        android:id="@+id/textDone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Done"
+        app:layout_constraintEnd_toEndOf="@+id/keDone"
+
+        app:layout_constraintStart_toStartOf="@+id/keDone"
+        app:layout_constraintTop_toBottomOf="@id/keDone" />
+
+    <ImageView
+        android:id="@+id/keDone"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="96dp"
+        android:src="@drawable/done"
+        app:layout_constraintLeft_toLeftOf="@id/history"
+        app:layout_constraintTop_toTopOf="@id/history" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

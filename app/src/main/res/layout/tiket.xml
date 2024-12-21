@@ -127,10 +127,9 @@
     <ImageView
         android:id="@+id/badanFilm"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="200dp"
         android:src="@drawable/badan_film"
-        tools:layout_editor_absoluteX="2dp"
-        tools:layout_editor_absoluteY="154dp"
+        android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="@id/backgroundTicket"
         app:layout_constraintTop_toBottomOf="@id/tempatBioskop" />
 
@@ -185,6 +184,15 @@
         android:src="@drawable/rounded_background"
         app:layout_constraintStart_toEndOf="@+id/location"
         app:layout_constraintTop_toTopOf="@+id/badanFilm" />
+
+    <Button
+        android:id="@+id/btnStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="done"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/placeHolderLocation"
+        app:layout_constraintTop_toBottomOf="@+id/location" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

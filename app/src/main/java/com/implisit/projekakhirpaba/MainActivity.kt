@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity() {
         val keHome = findViewById<ImageView>(R.id.home)
         val keHistory = findViewById<ImageView>(R.id.history)
         val logoutButton = findViewById<ImageView>(R.id.logout)
+        val keDone = findViewById<ImageView>(R.id.keDone)
 
         logoutButton.setOnClickListener {
             sharedPreferences.edit().apply {
@@ -65,6 +66,12 @@ class MainActivity : AppCompatActivity() {
             val fragmentHistory = history()
             fragmentManager.beginTransaction()
                 .replace(R.id.frameContainer, fragmentHistory, history::class.java.simpleName)
+                .commit()
+        }
+        keDone.setOnClickListener{
+            val fragmentDone = done()
+            fragmentManager.beginTransaction()
+                .replace(R.id.frameContainer, fragmentDone, done::class.java.simpleName)
                 .commit()
         }
     }
