@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.firestore
+import java.util.UUID
 
 class pilihKursi : AppCompatActivity() {
     private lateinit var judul: String
@@ -22,7 +23,6 @@ class pilihKursi : AppCompatActivity() {
     private lateinit var selectedTime: String
     private lateinit var theaterName: String
     private lateinit var theaterAddress: String
-    private  var done = false
     private  val selectedSeats = mutableListOf<String>()
     private lateinit var no_telpon: String
     private val db = FirebaseFirestore.getInstance()
@@ -108,6 +108,8 @@ class pilihKursi : AppCompatActivity() {
 
         val pesanTiket = findViewById<Button>(R.id.pesenTiket)
         pesanTiket.setOnClickListener {
+            val ticketID = UUID.randomUUID().toString()
+
 
             val ticketData = hashMapOf(
                 "movieTitle" to judul,
@@ -122,13 +124,14 @@ class pilihKursi : AppCompatActivity() {
                 "theaterName" to theaterName,
                 "theaterAddress" to theaterAddress,
                 "no_telpon" to no_telpon,
-                "status_Done" to done
+                "ticketID" to ticketID,
+                "status_Done" to false
             )
 
             val db = FirebaseFirestore.getInstance()
             db.collection("Users").document(no_telpon)
                 .collection("Tickets")
-                .document(judul)
+                .document(ticketID)
                 .set(ticketData)
                 .addOnSuccessListener {
                     Toast.makeText(this, "Tiket berhasil dipesan!", Toast.LENGTH_SHORT).show()

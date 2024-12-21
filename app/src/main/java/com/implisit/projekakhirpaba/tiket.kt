@@ -8,7 +8,6 @@ data class tiket(
     val tempat: String,
     val seat: String,
     val location: String,
-    var statusDone: Boolean
-
-
+    var statusDone: Boolean = false,
+    var ticketID: String
 )

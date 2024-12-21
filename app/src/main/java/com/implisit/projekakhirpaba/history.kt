@@ -69,7 +69,7 @@ class history : Fragment() {
         }
     }
 
-    private fun readTickets(userPhone: String, jumlah : TextView) {
+    private fun readTickets(userPhone: String, jumlah: TextView) {
         db.collection("Users").document(userPhone)
             .collection("Tickets")
             .get()
@@ -79,17 +79,25 @@ class history : Fragment() {
                     val seatNumbers = document.get("seatNumber") as? List<String> ?: emptyList()
                     val seatNumbersString = seatNumbers.joinToString(", ")
 
-                    val ticket = tiket(
-                        judul = document.getString("movieTitle") ?: "",
-                        tanggal = document.getString("tanggal_Tayang") ?: "",
-                        jam = document.getString("selectedTime") ?: "",
-                        tempat = document.getString("theaterName") ?: "",
-                        seat = seatNumbersString,
-                        location = document.getString("theaterAddress") ?: "",
-                        genre = document.getString("genre") ?: "",
-                        statusDone = false
-                    )
-                    arTiket.add(ticket)
+                    // Ambil status ticket
+                    val statusDone = document.getBoolean("status_Done") ?: false
+
+                    // Tambahkan kondisi untuk hanya menampilkan tiket dengan status false
+                    if (!statusDone) {
+                        val ticket = tiket(
+                            judul = document.getString("movieTitle") ?: "",
+                            tanggal = document.getString("tanggal_Tayang") ?: "",
+                            jam = document.getString("selectedTime") ?: "",
+                            tempat = document.getString("theaterName") ?: "",
+                            seat = seatNumbersString,
+                            location = document.getString("theaterAddress") ?: "",
+                            genre = document.getString("genre") ?: "",
+                            statusDone = statusDone, // Menyimpan status
+                            ticketID = document.getString("ticketID") ?: ""
+
+                        )
+                        arTiket.add(ticket)
+                    }
                 }
                 jumlah.text = arTiket.size.toString()
                 adapterTiket.notifyDataSetChanged()
@@ -99,6 +107,7 @@ class history : Fragment() {
                 Log.e("history", "Error fetching tickets", e)
             }
     }
+
 
     companion object {
         /**
