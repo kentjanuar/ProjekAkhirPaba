@@ -8,12 +8,12 @@
 
     >
 
-
     <ImageView
         android:id="@+id/backgroundTicket"
-        android:layout_width="410dp"
+        android:layout_width="match_parent"
         android:layout_height="139dp"
         android:src="@drawable/background_ticket"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,7 +24,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:text="judul"
-        android:textColor="#FFC107"
+        android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/backgroundTicket"
         app:layout_constraintTop_toTopOf="@+id/backgroundTicket" />
@@ -35,7 +35,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="Tanggal:"
-        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@+id/judulTiketFilm"
         app:layout_constraintTop_toBottomOf="@+id/judulTiketFilm" />
 
@@ -45,7 +46,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="xx-mon-yyyy"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@+id/placeHoldertanggalTiketFilm"
         app:layout_constraintTop_toBottomOf="@+id/placeHoldertanggalTiketFilm" />
 
@@ -56,7 +57,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
         android:text="genre"
-        android:textColor="#FFC107"
+        android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/judulTiketFilm" />
@@ -77,7 +78,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:text="Bioskop"
-        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/view"
         app:layout_constraintTop_toTopOf="@+id/placeHoldertanggalTiketFilm" />
 
@@ -88,7 +90,7 @@
         android:layout_height="33dp"
         android:layout_marginTop="8dp"
         android:text="nama bisokop"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@+id/tempatPlaceholderBioskop"
         app:layout_constraintTop_toBottomOf="@+id/tempatPlaceholderBioskop" />
 
@@ -107,7 +109,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:text="Jam:"
-        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/view2"
         app:layout_constraintTop_toTopOf="@+id/tempatPlaceholderBioskop" />
 
@@ -117,13 +120,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="xx:xx"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@+id/placeHolderJamTiketFilm"
         app:layout_constraintTop_toBottomOf="@+id/placeHolderJamTiketFilm" />
 
     <ImageView
         android:id="@+id/badanFilm"
-        android:layout_width="420dp"
+        android:layout_width="match_parent"
         android:layout_height="150dp"
         android:src="@drawable/badan_film"
         tools:layout_editor_absoluteX="2dp"
@@ -137,7 +140,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
-        android:text="seat:"
+        android:text="Seat:"
+        android:textStyle="bold"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@+id/badanFilm"
         app:layout_constraintTop_toBottomOf="@+id/backgroundTicket" />
@@ -158,6 +162,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="Location:"
+        android:textStyle="bold"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@+id/placeHolderSeat"
         app:layout_constraintTop_toBottomOf="@+id/placeHolderSeat" />

@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -45,7 +46,6 @@ class history : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_history, container, false)
     }
 
@@ -56,17 +56,20 @@ class history : Fragment() {
         _rvTiket.adapter = adapterTiket
         _rvTiket.layoutManager = LinearLayoutManager(context)
 
+        val _jumlah = view.findViewById<TextView>(R.id.totalTiket)
+
         val sharedPreference: SharedPreferences = requireActivity().getSharedPreferences("UserSession", 0)
         val userPhone = sharedPreference.getString("userPhone", null)
 
         if (userPhone != null) {
-            readTickets(userPhone)
+            readTickets(userPhone, _jumlah)
+
         } else {
             Toast.makeText(context, "User phone number not found in SharedPreferences", Toast.LENGTH_SHORT).show()
         }
     }
 
-    private fun readTickets(userPhone: String) {
+    private fun readTickets(userPhone: String, jumlah : TextView) {
         db.collection("Users").document(userPhone)
             .collection("Tickets")
             .get()
@@ -87,6 +90,7 @@ class history : Fragment() {
                     )
                     arTiket.add(ticket)
                 }
+                jumlah.text = arTiket.size.toString()
                 adapterTiket.notifyDataSetChanged()
             }
             .addOnFailureListener { e ->

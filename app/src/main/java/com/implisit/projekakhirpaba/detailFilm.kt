@@ -82,7 +82,7 @@ class detailFilm : AppCompatActivity() {
                     selectedDate.setBackgroundResource(R.drawable.rounded_border)
                 }
                 selectedDate = date
-                selectedDate.setBackgroundResource(R.drawable.rounded_background_grey)
+                selectedDate.setBackgroundResource(R.drawable.navbar)
             }
         }
 
@@ -92,7 +92,7 @@ class detailFilm : AppCompatActivity() {
                     selectedTime.setBackgroundResource(R.drawable.rounded_border)
                 }
                 selectedTime = time
-                selectedTime.setBackgroundResource(R.drawable.rounded_background_grey)
+                selectedTime.setBackgroundResource(R.drawable.navbar)
                 selectedTheaterName = theater.first
                 selectedTheaterAddress = theater.second
             }

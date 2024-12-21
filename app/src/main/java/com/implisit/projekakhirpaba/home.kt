@@ -51,7 +51,7 @@ class home : Fragment() {
         _rvFilm.layoutManager = LinearLayoutManager(context)
         _rvFilm.adapter = adapterFilm
 
-        tambahFilm(db, "The Shawshank Redemption", "Drama", "1994", "9.3", "COba","coba")
+//        tambahFilm(db, "The Shawshank Redemption", "Drama", "1994", "9.3", "COba","coba")
         readFilm(db)
 
         updateData(arFilm)
@@ -99,7 +99,6 @@ class home : Fragment() {
                     filmList.add(readFilm)
                 }
 
-                // Update your RecyclerView adapter with the new data
                 updateData(filmList)
 
             }

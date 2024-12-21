@@ -159,6 +159,8 @@ class pilihKursi : AppCompatActivity() {
                     userDoc.reference.collection("Tickets")
                         .whereEqualTo("tanggal_Tayang", selectedDate)
                         .whereEqualTo("selectedTime", selectedTime)
+                        .whereEqualTo("theaterName", theaterName)
+                        .whereEqualTo("movieTitle", judul)
                         .get()
                         .addOnSuccessListener { snapshot ->
                             for (document in snapshot.documents) {

@@ -10,7 +10,7 @@
         android:color="#000000" />
 
     <!-- Background color (optional) -->
-    <solid android:color="#999898" />
+    <solid android:color="#FCFAF8" />
 
     <!-- Padding (optional) -->
     <padding
